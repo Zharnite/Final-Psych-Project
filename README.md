@@ -1,2 +1,2 @@
 # Final-Psych-Project
-Making a game about game theory 
+Making a website about game theory 
