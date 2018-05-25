@@ -48,11 +48,47 @@
 							</header>
 							<p>Players are tasked to simultaneously distribute limited troops on the battlefield. In the classic version of the game, the player devoting the most resources to a battlefield wins that battlefield, and the gain (or payoff) is then equal to the total number of battlefields won.</p>
 
-							<!-- Map -->
+							<p>In this game, you have 25 soldiers you need to distribute on 5 territories.</p>
 
-							<p>Vivamus nec odio ac ligula congue feugiat at vitae leo. Aenean sem justo, finibus sed dui eu, accumsan facilisis dolor. Fusce quis dui eget odio iaculis aliquam vel sed velit. Nulla pellentesque posuere semper. Nulla eu sagittis lorem, a auctor nulla. Sed ac condimentum orci, ac varius ante. Nunc blandit quam sit amet sollicitudin sodales.</p>
+							<img src="../images/tempmap.png" width="400px">
 
-							<p>Vivamus ultricies mollis mauris quis molestie. Quisque eu mi velit. In et cursus nibh. Donec facilisis, orci sed mollis hendrerit, nunc risus mattis odio, eget efficitur nisl orci a lectus. Aenean finibus neque convallis orci sollicitudin tincidunt. Vivamus lacinia facilisis diam, quis facilisis nisi luctus nec. Aliquam ac molestie enim, ut ultrices elit. Fusce laoreet vulputate risus in tincidunt. Sed commodo mollis maximus. Nullam varius laoreet nibh sit amet facilisis. Donec ac odio vehicula, consequat elit et, sodales justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam ac auctor mauris, in hendrerit libero. </p>
+							<header class="align-center">
+								<p></p>
+								<p>Your troops: <span id="yourT">25</span></p>
+								<p>Enemy troops: <span id="enemyT">25</span></p>
+							</header>
+
+							<br>
+
+							<div>
+								<p>Troops to send to...</p>
+								<span>lufiod: <span id="lufiod">0</span></span> 
+								<br>
+								<button onclick="addone('lufiodT');display();">+1</button>
+								<button onclick="minusone('lufiodT');display();">-1</button>
+								<br>
+								<span>brandor: <span id="brandor">0</span></span>
+								<br>
+								<button onclick="addone('brandorT');display();">+1</button>
+								<button onclick="minusone('brandorT');display();">-1</button>
+								<br>
+								<span>granite: <span id="granite">0</span></span>
+								<br>
+								<button onclick="addone('graniteT');display();">+1</button>
+								<button onclick="minusone('graniteT');display();">-1</button>
+								<br>
+								<span>basalt: <span id="basalt">0</span></span>
+								<br>
+								<button onclick="addone('basaltT');display();">+1</button>
+								<button onclick="minusone('basaltT');display();">-1</button>
+								<br>
+								<span>hekose: <span id="hekose">0</span></span>
+								<br>
+								<button onclick="addone('hekoseT');display();">+1</button>
+								<button onclick="minusone('hekoseT');display();">-1</button>
+								<br>
+							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -79,6 +115,7 @@
 			<script src="../assets/js/skel.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+			<script src="js/blottogame.js"></script>
 
 	</body>
 </html>
