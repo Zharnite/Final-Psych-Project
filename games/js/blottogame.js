@@ -40,21 +40,25 @@ function addone(num) {
 
 function minusone(num) {
 	if(yourT < 25) {
-		yourT++;
 		if(num == "lufiodT" && lufiodT > 0) {
 			lufiodT--;
+			yourT++;
 		}
 		else if(num == "brandorT" && brandorT > 0) {
 			brandorT--;
+			yourT++;
 		}
 		else if(num == "graniteT" && graniteT > 0) {
 			graniteT--;
+			yourT++;
 		}
 		else if(num == "basaltT" && basaltT > 0) {
 			basaltT--;
+			yourT++;
 		}
 		else if(num == "hekoseT" && hekoseT > 0) {
 			hekoseT--;
+			yourT++;
 		}
 		else {
 			var x;
