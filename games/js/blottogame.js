@@ -70,3 +70,25 @@ function display() {
 	basalt.innerHTML = basaltT;
 	hekose.innerHTML = hekoseT;
 }
+
+function enemyPlay() {
+	// sets the units of the enemy's play
+}
+
+function determineWin() {
+	// compares the number of troops and determine who has won what territory
+	// also determine winner
+}
+
+function gameStats() {
+	/** make enemy troops to 0
+		show where the enemy placed the number of troops 
+		show where you place troops
+		displays the win or lose message
+
+	**/
+}
+
+function sendT() {
+	// enemyPlay, compare, gamestats
+}
