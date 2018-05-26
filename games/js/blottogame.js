@@ -75,14 +75,95 @@ function display() {
 	hekose.innerHTML = hekoseT;
 }
 
+var enemyT = 25;
+var elufiodT = 0;
+var ebrandorT = 0;
+var egraniteT = 0;
+var ebasaltT = 0;
+var ehekoseT = 0;
+
 function enemyPlay() {
 	// sets the units of the enemy's play
+	for(var i = 0; i < 5; i++) {
+		var troops = Math.floor(Math.random() * (enemyT + 1));
+		if(i == 0) {
+			elufiodT += troops;
+		}
+		else if(i == 1) {
+			ebrandorT += troops;
+		}
+		else if(i == 2) {
+			egraniteT += troops;
+		}
+		else if(i == 3) {
+			ebasaltT += troops;
+		}
+		else if(i == 4) {
+			ehekoseT += troops;
+		}
+		enemyT -= troops;
+	}
+	ehekoseT += enemyT;
+	enemyT = 0;
 }
+
+var yourTer = 0;
+var enemyTer = 0;
+var drawTer = 0;
+var winner = "";
 
 function determineWin() {
 	// compares the number of troops and determine who has won what territory
 	// also determine winner
+	if(elufiodT < lufiodT) {
+		yourTer++;
+	}
+	else if(elufiodT > lufiodT) {
+		enemyTer++;
+	}
+
+	if(ebrandorT < brandorT) {
+		yourTer++;
+	}
+	else if(ebrandorT > brandorT) {
+		enemyTer++;
+	}
+
+	if(egraniteT < graniteT) {
+		yourTer++;
+	}
+	else if(egraniteT > graniteT) {
+		enemyTer++;
+	}
+
+	if(ebasaltT < basaltT) {
+		yourTer++;
+	}
+	else if(ebasaltT > basaltT) {
+		enemyTer++;
+	}
+
+	if(ebasaltT < basaltT) {
+		yourTer++;
+	}
+	else if(ebasaltT > basaltT) {
+		enemyTer++;
+	}
+
+	drawTer = 5 - (enemyTer + yourTer);
+	if(yourTer > enemyTer) {
+		winner = "Player";
+	}
+	else if(yourTer < enemyTer) {
+		winner = "Opponent";
+	}
+	else {
+		winner = "No one";
+	}
+
 }
+
+results = document.getElementById('results');
 
 function gameStats() {
 	/** make enemy troops to 0
@@ -91,8 +172,22 @@ function gameStats() {
 		displays the win or lose message
 
 	**/
+	results.innerHTML += winner + " is the winner." + "<br>";
+	results.innerHTML += "You sent " + lufiodT + " to lufiod, " + brandorT + " to brandor, " + graniteT + " to granite, " + basaltT + " to basalt, and " + hekoseT + " to hekose." + "<br>";
+	results.innerHTML += "Opponent sent " + elufiodT + " to lufiod, " + ebrandorT + " to brandor, " + egraniteT + " to granite, " + ebasaltT + " to basalt, and " + ehekoseT + " to hekose." + "<br>";
+	enemyTEl.innerHTML = enemyT;
 }
+
+var sentAlready = false;
 
 function sendT() {
 	// enemyPlay, compare, gamestats
+	if(!sentAlready) {
+		sentAlready = true;
+		enemyPlay();
+		determineWin();
+		gameStats();
+	}
+	
 }
+
